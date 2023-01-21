@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>ToDo</title>
+
+    <!-- Styling - bring the styles.css file into my html -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Adding Babel - don't use this in production: -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+
+    <h1>ToDos</h1>
+
+    <!-- Target - we will put our React component inside this div -->
+    <div id="root"></div>
+
+    <!-- load react -->
+    <script src="https://unpkg.com/react/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom/umd/react-dom.development.js" crossorigin></script>
+
+     <!-- Load our React component into root -->
+    <script src="index.js" defer type="text/babel"></script>
+
+
+  </body>
+</html>
