@@ -1,49 +1,55 @@
-function App(){
+function App() {
     const [todos, setTodos] = React.useState([
-      {
-        text: 'Learn react',
-        isCompleted: false,
-      },
-      {
-        text: 'Meet friend for lunch',
-        isCompleted: false,
-      },
-      {
-        text: 'Learn to create an app',
-        isCompleted: false,
-      },
-      {
-        text: 'Build todo app',
-        isCompleted: false,
-      }         
+        {
+            text: 'Learn react',
+            isCompleted: false,
+        },
+        {
+            text: 'Meet friend for lunch',
+            isCompleted: false,
+        },
+        {
+            text: 'Learn to create an app',
+            isCompleted: false,
+        },
+        {
+            text: 'Build todo app',
+            isCompleted: false,
+        }
     ]);
     const [value, setValue] = React.useState('');
     const handleSubmit = e => {
         e.preventDefault();
         if (!value) return;
-        const newTodos = [...todos, {text:value, isCompleted:false}];
+        const newTodos = [...todos, { text: value, isCompleted: false }];
         setTodos(newTodos);
         setValue('');
     }
-    return(
-      <>
-        {todos.map((todo, i) => 
-            <div className="todo" key={i}>{todo.text}</div>)}
-        <form onSubmit={handleSubmit}>
-            <input
-                type="text"
-                className="input"
-                value={value}
-                placeholder="Add Todo ..."
-                onChange={e => setValue(e.target.value)}
+    const removeTodo = e => {
+        const index = Number(e.target.id);
+        let temp = [...todos];
+        temp.splice(index, 1);
+        setTodos(temp);
+    }
+    return (
+        <>
+            {todos.map((todo, i) =>
+                <div className="todo" key={i} id={i} onClick={removeTodo}>
+                    {todo.text}</div>)}
+            <form onSubmit={handleSubmit}>
+                <input
+                    type="text"
+                    className="input"
+                    value={value}
+                    placeholder="Add Todo ..."
+                    onChange={e => setValue(e.target.value)}
                 />
-        </form>
-      </>
+            </form>
+        </>
     );
-  }
-  
-  ReactDOM.render(
-    <App/>,
+}
+
+ReactDOM.render(
+    <App />,
     document.getElementById('root')
-  );
-  
+);

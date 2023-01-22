@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: "Arial";
+  font-family: "Helvetica";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -23,7 +23,7 @@ code {
 }
 
 .todo {
-  background: rgb(53, 207, 36);
+  background: rgb(156, 36, 207);
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
   padding: 3px 10px;
   font-size: 24px;
@@ -35,6 +35,7 @@ code {
 }
 
 .input {
+  background: rgb(207, 36, 176);
   width: 100%;
   box-sizing: border-box;
   border: 0;
