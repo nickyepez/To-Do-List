@@ -1,6 +1,7 @@
-function Todo({todo, index, remove}) {
+function Todo({todo,index,remove}) {
     function handle(){
-        remove(index)
+        console.log('Ping:',index);
+        remove(index);
     }
     return <div className="todo" onClick={handle}>{todo.text} (-)</div>
 }

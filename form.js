@@ -1,4 +1,4 @@
-function TodoForm({addTodo}) {
+function TodoForm({ addTodo }) {
     const [value, setValue] = React.useState('');
 
     const handleSubmit = e => {
@@ -15,8 +15,7 @@ function TodoForm({addTodo}) {
                 className="input"
                 value={value}
                 placeholder="Add Todo ..."
-                onChange={e => setValue(e.target.value)}
-                />
+                onChange={e => setValue(e.target.value)} />
         </form>
-    );
+    )
 }
